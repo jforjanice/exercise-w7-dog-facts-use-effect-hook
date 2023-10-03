@@ -1,1 +1,21 @@
 /* Start Adding your CSS here */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background-size: cover;
+}
+.card{
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: whitesmoke;
+   
+}

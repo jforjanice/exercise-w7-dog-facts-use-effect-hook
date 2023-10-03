@@ -9,9 +9,9 @@ const cleanFact = loading ? "Loading..." : fact[0].attributes.body
 
   
   return (
-    <div>
-      <h1>dog fact here.</h1>
-      <p>{cleanFact}</p>
+    <div className="card text-center">
+      <h1 className="card-header">dog facts</h1>
+      <p className="card-text">{cleanFact}</p>
     </div>
   );
 };
