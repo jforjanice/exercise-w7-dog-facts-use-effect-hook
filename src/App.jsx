@@ -5,19 +5,24 @@ import { DogFact } from "./components/DogFact";
 export const App = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const DogData = () => {
-    useEffect(() => {
-      fetch("https://dogapi.dog/api/v2/facts")
+
+  const dogFactData = async () => {
+    
+     await fetch("https://dogapi.dog/api/v2/facts")
         .then((response) => response.json())
         .then((data) => {
-          setData(data);
+          setData(data.data);
           setLoading(false);
         })
         .catch((error) => {
           console.error("Error fetching data:", error);
         });
-    }, []);
+    
   };
+  useEffect(()=>{
+    dogFactData()
+
+  },[])
 
   // Hint: Initialize state for storing the dog fact
   // Hint: Define the API endpoint
@@ -26,7 +31,7 @@ export const App = () => {
 
   return (
     <div className="App">
-      <DogFact fact={DogData()} />
+      <DogFact fact={data} loading={loading} />
     </div>
   );
 };

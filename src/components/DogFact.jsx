@@ -1,16 +1,17 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 // DogFact Component
-export const DogFact = ({ fact }) => {
-  // const loadingFact = () => {
-  //   fact
-  //     ? !loading && <p>Loading... </p>
-  //     : loading &&
-  // };
+export const DogFact = ({ fact , loading }) => {
+
+
+const cleanFact = loading ? "Loading..." : fact[0].attributes.body
+
+
+  
   return (
     <div>
       <h1>dog fact here.</h1>
-      <p>fact={fact}</p>
+      <p>{cleanFact}</p>
     </div>
   );
 };
